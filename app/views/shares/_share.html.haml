@@ -1,0 +1,15 @@
+.content_post{:style => "background-image: url(#{share.image});"}
+  .more
+    %span= image_tag 'arrow_top.png'
+    %ul.more_list
+      %li
+        = link_to '詳細', "/shares/#{@share}", method: :get
+      - if user_signed_in? && current_user.id == @share
+        %li
+          = link_to '編集', "/shares/#{share.id}/edit", method: :get
+        %li
+          = link_to '削除', "/shares/#{share.id}", method: :delete
+  = simple_format(@share)
+  %span.name
+    %a{:href => "/users/#{@share}"}
+      %span 投稿者

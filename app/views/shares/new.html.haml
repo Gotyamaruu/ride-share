@@ -1,0 +1,12 @@
+.new__shares
+  %h3 ライド募集
+  .new__shares__form
+    = form_with url: shares_path do |f|
+      .new__shares__form__mask
+        = f.text_field :content, class: 'form__massge', placeholder: 'ライド先を入力'
+        = f.label :image, class: 'form__image' do
+          = fa_icon 'picture-o', class: 'icon3'
+        = f.label :"参加人数", class: 'form_human'
+        = f.select :カラム名, [["1~5人", "1~5人"], ["5~10人", "5人~10人"], ["10~15人", "10~15人"], ["15~20人", "15~20人"]]
+        = f.select :カラム名, [["5km~10km", "5km~10km"], ["10km~20km", "10km~20km"], ["20km~30km", "20km~30km"], ["30km~40km", "30km~40km"], ["40km~50km, 40km~50km"], ["50km~60km", "50km~60km"], ["60km~70km", "60km~70km"], ["70km~80km", "70km~80km"], ["80km~90km", "80km~90km"], ["90km~100km", "90km~100km"], ["100km~", "100km~"]]
+      = f.submit 'Send', class: 'form__submit'
