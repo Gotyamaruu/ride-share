@@ -1,0 +1,97 @@
+  @font-face {
+    font-family: 'myfont';
+    src: url('ipaexm.ttf') format('truetype');
+    font-family: 'ほのか明朝';
+    src: url('font_1_honokamin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body,html {
+    font-family: 'myfont';
+    height: 100%;
+    background-color: $lightGray;
+  }
+
+  .main__contents{
+    width: 700px;
+    margin:auto ;
+  }
+  .share {
+    @include boxBase(20px 0  ,30px);
+    position: relative;
+    height: 300px;
+    width: 600px;
+    color: #fff;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 3px;
+    box-shadow: 0 20px 10px 0px rgba($black,0.2);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      border-radius: 3px;
+    }
+    .list {
+      position: absolute;
+      cursor: pointer;
+      top: 20px;
+      right: 10px;
+      z-index: 2;
+      height: 100px;
+      width: 80px;
+      &:hover ul.list__lists {
+        display: block;
+      }
+      ul.list__lists {
+        position: absolute;
+        text-align: left;
+        width: 80px;
+        right: 0;
+        font-size: 12px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        display: none;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        border-radius: 3px;
+        li {
+          border-bottom: 1px solid #ddd;
+          &:last-child {
+            border-bottom: 0;
+        }
+      }
+    }
+  }
+  p {
+    position: absolute;
+    left: 30px;
+    right: 100px;
+    bottom: 30px;
+    margin: 0;
+    font-size: 20px;
+    z-index: 2;
+    font-weight: bold;
+    font-family: 'Unica One','ほのか明朝', sans-serif;
+}
+  span.name {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    font-size: 15px;
+    font-family: 'Unica One',sans-serif;
+    color: rgb(194, 191, 191);
+    span {
+      display: block;
+    }
+  }
+  .share__massage {
+    .share__message-date {
+      text-align: right;
+    }
+ }
+}

@@ -1,25 +1,80 @@
 
 
-.new__shares{
-  @include boxBase(20px 0 ,30px);
-  box-shadow: 0 0 10px rgba($black,0.2);
-  background-color: $white;
-  box-sizing: border-box;
-  height: 800px;
-  }
-h3 {
-    @include baseMargin(0 0 20px);
+
+  .new__shares{
+    @include boxBase(0px 0 ,30px);
+    background-image:   url("bike-yellow.jpg");
+    background-size: cover;
+    height: 1000px;
+    width: auto;
     text-align: center;
-    font-weight: normal;
-    font-size: 40px;
-    color: $dark;
-    font-family: 'Sawarabi Gothic', sans-serif;
-  }
-  .new__shares__form{
-    text-align: center;
-    @include baseMargin(30px 0px 90px 20px);
-  }
-  .form_human{
-    display:block;
-    margin:30px 0 0 0;
-  }
+    }
+  h3 {
+      @include baseMargin(0 0 20px);
+      text-align: center;
+      font-weight: normal;
+      font-size: 40px;
+      color: $dark;
+      font-family: 'Sawarabi Gothic', sans-serif;
+    }
+    .new__shares__form {
+      text-align: center;
+      @include baseMargin(30px 0px 90px 20px);
+    }
+    .form__massge {
+      outline:none;
+      text-align: center;
+      margin: 0 0 0 10px;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 0 2px rgb(204, 204, 204);
+    }
+    .label{
+      cursor: pointer;
+      font-size:1.5em;
+    }
+    .hidden {
+      display: none;
+      }
+    .form__human {
+      display: block;
+      margin:30px 3px 5px 0;
+    }
+    .human__select {
+      background: none transparent;
+      vertical-align: middle;
+      -webkit-appearance: button;
+      box-shadow: 0 0 15px rgb(204, 204, 204);
+    }
+    .form__distance {
+      display: block;
+      margin:30px 0 5px 0;
+    }
+    .distance__select {
+      background: none transparent;
+      vertical-align: middle;
+      -webkit-appearance: button;
+      box-shadow: 0 0 15px rgb(204, 204, 204);
+    }
+    .form__elevation {
+      display: block;
+      margin: 30px 0 5px 0;
+    }
+    .elevation__select {
+      background: #fff;
+      border-radius: 4px;
+      padding: 20px;
+      transition: all 0.2s;
+    }
+    .form__remarks {
+      display: table;
+      margin: 20px auto;
+      text-align: center;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 0 2px rgb(204, 204, 204);
+    }
+    .form__submit {
+        margin:30px 0 0 0 ;
+    }
+

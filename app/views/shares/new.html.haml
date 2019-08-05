@@ -1,12 +1,23 @@
-.new__shares
-  %h3 ライド募集
-  .new__shares__form
-    = form_with url: shares_path do |f|
-      .new__shares__form__mask
-        = f.text_field :content, class: 'form__massge', placeholder: 'ライド先を入力'
-        = f.label :image, class: 'form__image' do
-          = fa_icon 'picture-o', class: 'icon3'
-        = f.label :"参加人数", class: 'form_human'
-        = f.select :カラム名, [["1~5人", "1~5人"], ["5~10人", "5人~10人"], ["10~15人", "10~15人"], ["15~20人", "15~20人"]]
-        = f.select :カラム名, [["5km~10km", "5km~10km"], ["10km~20km", "10km~20km"], ["20km~30km", "20km~30km"], ["30km~40km", "30km~40km"], ["40km~50km, 40km~50km"], ["50km~60km", "50km~60km"], ["60km~70km", "60km~70km"], ["70km~80km", "70km~80km"], ["80km~90km", "80km~90km"], ["90km~100km", "90km~100km"], ["100km~", "100km~"]]
-      = f.submit 'Send', class: 'form__submit'
+.new-content
+  .new__shares
+    %h3.new__shares__text
+      ライド募集
+
+    .new__shares__form
+      = form_with url: shares_path do |f|
+        .new__shares__form__mask
+          = f.text_field :content, class: 'form__massge', placeholder: 'ライド先を入力', maxlength: "20"
+          = f.label :image, class: 'form__image' do
+            = fa_icon 'picture-o', class: 'icon3'
+            = f.file_field :image, class: 'hidden'
+          = f.label :"都道府県", class: 'form__prefectures'
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+          = f.label :"参加人数", class: 'form__human'
+          = f.select :human, [["1~5人", "1~5人"], ["5~10人", "5人~10人"], ["10~15人", "10~15人"], ["15~20人", "15~20人"]],{}, class: 'human__select sources'
+          = f.label :"走行距離", class: 'form__distance'
+          = f.select :distance, [["5km~10km", "5km~10km"], ["10km~20km", "10km~20km"], ["20km~30km", "20km~30km"], ["30km~40km", "30km~40km"], ["40km~50km", "40km~50km"], ["50km~60km", "50km~60km"], ["60km~70km", "60km~70km"], ["70km~80km", "70km~80km"], ["80km~90km", "80km~90km"], ["90km~100km", "90km~100km"], ["100km~", "100km~"]], {},class: 'distance__select'
+          = f.label :"最大標高差", class:'form__elevation'
+          = f.select :elevation, [["0m", "0m"], ["10m~50m", "10m~50m"], ["50m~100m", "50m~100m"], ["100m~150m", "100m~150m"], ["150m~200m", "150m~200m"], ["200m~250m", "200m~250m"], ["300m~350m", "300m~350m"], ["350m~400m", "350m~400m"], ["450m~500m", "450m~500"]],{}, class: 'elevation__select'
+          = f.text_area :remarks, class:'form__remarks', placeholder: '備考欄'
+        = f.submit 'Send', class: 'btn btn-primary btn-sm'
+

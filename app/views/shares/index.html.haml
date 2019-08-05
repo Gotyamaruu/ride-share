@@ -1,4 +1,6 @@
-.main__contents
-  - @shares.each do |share|
-    = render partial: share, locals: { share: share}
-  = paginate(@shares)
+.main-page
+  = render "shared/main-hedaer"
+  .main__contents
+    - @shares.each do |share|
+      = render partial: share, locals: { share: share}
+    = paginate(@shares)
