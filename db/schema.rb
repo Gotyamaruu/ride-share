@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_07_14_075611) do
 
   create_table "shares", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
+    t.integer "human_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "content"

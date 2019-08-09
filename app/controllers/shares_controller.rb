@@ -21,7 +21,7 @@ class SharesController < ApplicationController
 
   private
   def share_params
-    params.permit(:content, :image, :human, :distance, :elevation, :remarks, :prefecture_id).merge(user_id: current_user.id)
+    params.permit(:content, :image, :human, :distance, :elevation, :remarks, :prefecture_id, :human_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
