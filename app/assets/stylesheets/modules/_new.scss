@@ -1,15 +1,26 @@
 
-
-
   .new__shares{
+    @media screen and (min-width:375px) {
+      background-position: center center;
+    }
+
+    @media screen and (min-width:1024px) {
+    height: 1366px;
+    }
+
     @include boxBase(0px 0 ,30px);
     background-image:   url("bike-yellow.jpg");
-    background-size: cover;
-    height: 1000px;
+    height: 925px;
     width: auto;
     text-align: center;
+    background-repeat: no-repeat;
+    // background-position: center center;
+    background-size: cover;
     &__text {
-      @include baseMargin(0 0 20px);
+      @media screen and (min-width:375px) {
+        font-size: 20px;
+      }
+      @include baseMargin(20px 0 20px);
       text-align: center;
       font-weight: normal;
       font-size: 40px;
@@ -17,59 +28,67 @@
     }
     .new-form {
       text-align: center;
-      @include baseMargin(30px 0px 90px 20px);
-      .form__massge {
+      @include baseMargin(50px 0px 90px 20px);
+      &__content {
+        max-width: 300px;
+        margin: auto;
+      }
+      .form__message {
+      font-size: 18px;
       outline:none;
       text-align: center;
-      margin: 0 0 0 10px;
-      width: 300px;
-      border-radius: 5px;
-      box-shadow: 0 0 2px rgb(204, 204, 204);
+      width: 90%;
+      box-sizing: border-box;
+      padding: 0.3em;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: black;
+      border: none;
+      border-bottom: 1px solid rgba(0, 153, 255, 0.424);
+      background: transparent;
       }
       .hidden {
         display: none;
         }
-      .form__human {
-        display: block;
-        margin:30px 3px 5px 0;
-      }
-      .human__select {
+      .form__select {
+        width: 100%;
+        padding: 11px 15px;
         background: none transparent;
         vertical-align: middle;
         -webkit-appearance: button;
-        box-shadow: 0 0 15px rgb(204, 204, 204);
-      }
-      .form__distance {
         display: block;
-        margin:30px 0 5px 0;
-      }
-      .distance__select {
-        background: none transparent;
-        vertical-align: middle;
-        -webkit-appearance: button;
-        box-shadow: 0 0 15px rgb(204, 204, 204);
-      }
-      .form__elevation {
-        display: block;
-        margin: 30px 0 5px 0;
-      }
-      .elevation__select {
-        background: #fff;
-        border-radius: 4px;
-        padding: 20px;
-        transition: all 0.2s;
+        color: gray;
+        font-size: 18px;
+        margin: 30px 3px 5px 0;
+        text-indent: 100px;
+        outline: none;
+        border: solid 4px rgba(255, 255, 0, 0);
+        border-bottom: solid 1px rgba(0, 153, 255, 0.424);
       }
       .form__remarks {
+        font-size: 18px;
         display: table;
         margin: 20px auto;
         text-align: center;
-        width: 300px;
         border-radius: 5px;
-        box-shadow: 0 0 2px rgb(204, 204, 204);
+        outline:none;
+        text-align: center;
+        width: 90%;
+        box-sizing: border-box;
+        padding: 0.3em;
+        transition: 0.3s;
+        letter-spacing: 1px;
+        color: black;
+        border: 1px solid rgba(0, 153, 255, 0.424);
+        background: transparent;
+        @media screen and (min-width:375px) {
+          border: 2px solid rgba(0, 153, 255, 0.424);
+        }
       }
-      .form__submit {
-          margin:30px 0 0 0 ;
+      .btn-primary {
+          margin:32px 0 0 0 ;
+          width: 90%;
+          background-color: rgba(0, 153, 255, 0.424);
       }
     }
   }
-
