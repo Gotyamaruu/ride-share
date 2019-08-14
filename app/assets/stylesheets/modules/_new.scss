@@ -1,20 +1,20 @@
 
   .new__shares{
-    @media screen and (min-width:375px) {
+    @media screen and (min-width:375px) and (max-width: 768px) {
       background-position: center center;
     }
 
-    @media screen and (min-width:1024px) {
+    @media screen and (min-width:768px) and (max-width:1670px) {
     height: 1366px;
+    background-position: center center;
     }
 
-    @include boxBase(0px 0 ,30px);
+    @include boxBase(0px 0 ,20px);
     background-image:   url("bike-yellow.jpg");
-    height: 925px;
+    height: 940px;
     width: auto;
     text-align: center;
     background-repeat: no-repeat;
-    // background-position: center center;
     background-size: cover;
     &__text {
       @media screen and (min-width:375px) {
@@ -24,7 +24,7 @@
       text-align: center;
       font-weight: normal;
       font-size: 40px;
-      color: $dark;
+      color: rgb(80, 78,78);
     }
     .new-form {
       text-align: center;
@@ -42,10 +42,13 @@
       padding: 0.3em;
       transition: 0.3s;
       letter-spacing: 1px;
-      color: black;
+      color: rgb(80, 78, 78);
       border: none;
       border-bottom: 1px solid rgba(0, 153, 255, 0.424);
       background: transparent;
+      }
+      input::placeholder{
+        color: rgb(80, 78,78)
       }
       .hidden {
         display: none;
@@ -57,7 +60,7 @@
         vertical-align: middle;
         -webkit-appearance: button;
         display: block;
-        color: gray;
+        color: rgb(80, 78, 78);
         font-size: 18px;
         margin: 30px 3px 5px 0;
         text-indent: 100px;
@@ -78,12 +81,17 @@
         padding: 0.3em;
         transition: 0.3s;
         letter-spacing: 1px;
-        color: black;
+        color: rgb(80, 78,78);
+        background-color: rgba(0, 153, 255, 0.424);
         border: 1px solid rgba(0, 153, 255, 0.424);
         background: transparent;
-        @media screen and (min-width:375px) {
-          border: 2px solid rgba(0, 153, 255, 0.424);
+        @media screen and (min-width:375px)and (max-width: 768px) {
+          border: 3px solid rgba(0, 153, 255, 0.424);
+          font-size: 18px;
         }
+      }
+      input::placeholder{
+        color: rgb(80, 78,78)
       }
       .btn-primary {
           margin:32px 0 0 0 ;
