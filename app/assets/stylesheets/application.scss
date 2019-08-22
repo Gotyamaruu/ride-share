@@ -1,8 +1,12 @@
   @import "./reset";
 
+  @import "bootstrap";
+
   @import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic&display=swap&subset=japanese');
 
   @import "./mixin/mixin";
+
+  @import url(http://fonts.googleapis.com/css?family=Unica+One);
 
   @import "./config/variable";
 
@@ -10,4 +14,9 @@
 
   @import "font-awesome";
 
+  @import "./modules/index";
+
+  @import "./modules/font";
+
   @import "./modules/new";
+

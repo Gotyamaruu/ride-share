@@ -9,9 +9,8 @@ gem 'rails', '~> 5.2.2'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
+# Use SCSSC for stylesheets
+
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
@@ -36,17 +35,18 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 3.5'
 
-  gem 'rubocop', require: false
 
   gem 'guard-rspec'
-
-  gem 'guard-rubocop'
 end
 
 group :development do
@@ -82,3 +82,15 @@ end
   gem 'pry-rails'
 
   gem 'font-awesome-rails'
+
+  gem 'carrierwave'
+
+  gem 'mini_magick'
+
+  gem 'erb2haml'
+
+  gem 'bootstrap-sass'
+
+  gem 'jquery-rails'
+
+  gem 'active_hash'

@@ -1,0 +1,24 @@
+.dropdown.drop-hover
+  %button.btn.btn-secondary.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+    ドロップダウンボタン
+  %ul.dropdown-menu
+    %li.dropright.drop-hover
+      %a.dropdown-item.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} メニュー
+      %ul.dropdown-menu
+        %li.dropright.drop-hover
+          %a.dropdown-item.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} メニュー
+          %ul.dropdown-menu
+            %li
+              %a.dropdown-item{:href => "#"} メニュー
+            %li
+              %a.dropdown-item{:href => "#"} メニュー
+        %li
+          %a.dropdown-item{:href => "#"} メニュー
+        %li
+          %a.dropdown-item{:href => "#"} メニュー
+    %li
+      %a.dropdown-item{:href => "#"} メニュー
+:css
+  .drop-hover:hover > .dropdown-menu {
+    display: block !important;
+  }

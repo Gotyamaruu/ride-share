@@ -1,0 +1,8 @@
+.show
+  %p
+    = @name
+    さんの投稿一覧
+  - @shares.each do |share|
+    .share{:style => "background-image: url(#{share.image});"}
+      = simple_format(share.content)
+  = paginate(@shares)

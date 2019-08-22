@@ -10,14 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_073108) do
+ActiveRecord::Schema.define(version: 2019_07_14_075611) do
 
   create_table "shares", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.integer "human_id"
+    t.integer "distance_id"
+    t.integer "elevation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "content"
     t.string "image"
     t.integer "user_id"
+    t.text "remarks"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -28,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_073108) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
