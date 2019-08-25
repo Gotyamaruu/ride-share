@@ -87,7 +87,7 @@ end
 
   gem 'erb2haml'
 
-  gem 'bootstrap-sass'
+  gem 'bootstrap'
 
   gem 'jquery-rails'
 
