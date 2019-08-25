@@ -89,8 +89,6 @@ end
 
   gem 'erb2haml'
 
-  gem 'bootstrap-sass'
-
   gem 'jquery-rails'
 
   gem 'active_hash'
