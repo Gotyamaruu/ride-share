@@ -73,8 +73,6 @@ end
 
   gem 'erb2haml'
 
-  gem 'bootstrap'
-
   gem 'kaminari'
 
   gem 'devise'
