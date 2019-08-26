@@ -50,11 +50,6 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
@@ -67,7 +62,10 @@ set :default_env, {
 
 set :linked_files, %w{ config/secrets.yml }
 
-
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
   desc 'upload secrets.yml'
   task :upload do
     on roles(:app) do |host|
