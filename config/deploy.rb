@@ -50,6 +50,11 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+end
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
@@ -60,8 +65,3 @@ set :default_env, {
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
 
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
