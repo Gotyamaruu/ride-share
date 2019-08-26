@@ -101,3 +101,5 @@ end
   gem 'jquery-rails'
 
   gem 'active_hash'
+
+  gem "sassc-rails"
