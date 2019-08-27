@@ -74,7 +74,7 @@ end
 
   gem 'erb2haml'
 
-  gem 'bootstrap'
+  gem ''
 
   gem 'kaminari'
 
