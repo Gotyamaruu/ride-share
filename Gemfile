@@ -74,8 +74,6 @@ end
 
   gem 'erb2haml'
 
-  gem ''
-
   gem 'kaminari'
 
   gem 'devise'
