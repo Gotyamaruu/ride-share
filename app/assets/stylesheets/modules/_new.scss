@@ -2,7 +2,7 @@
   .new__shares{
     @media screen and (min-width:375px) and (max-width: 767px) {
       background-position: center center;
-      background-image: url("bicycle1.jpg")
+      background-image: image-url("bicycle1.jpg")
     }
 
     @media screen and (min-width:768px) and (max-width:1024px) {
@@ -11,7 +11,7 @@
     }
 
     @include boxBase(0px 0 ,20px);
-    background-image:   url("bicycle2.jpg");
+    background-image:   image-url("bicycle2.jpg");
     height: 940px;
     width: auto;
     text-align: center;
