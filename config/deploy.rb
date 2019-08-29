@@ -2,7 +2,7 @@
 lock "3.11.0"
 
 set :application, "ride-share"
-set :repo_url, "git@github.com/Gotyamaruu/ride-share"
+set :repo_url, "git@github.com:Gotyamaruu/ride-share.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
