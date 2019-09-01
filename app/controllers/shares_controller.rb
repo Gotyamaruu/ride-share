@@ -9,15 +9,19 @@ class SharesController < ApplicationController
 
   def new
     @share = Share.new
+    @share.share_images.build
   end
 
   def create
     @share = Share.new(share_params)
-    if @share.save && new_image_params[:images][0] != ""
+    if @share.save && new_image_params[:images][0] != " "
       new_image_params[:images].each do |image|
-        @share.share_images.create(image: image, share_id: share.id)
+        @share.share_images.create(image_url: image, share_id: @share.id)
       end
       redirect_to root_path
+    else
+      @share.share_images.bulid
+      rendre :new
     end
   end
 
@@ -27,7 +31,7 @@ class SharesController < ApplicationController
 
   private
   def share_params
-    params.permit(:content, :image, :remarks, :prefecture_id, :human_id,  :elevation_id, :distance_id).merge(user_id: current_user.id)
+    params.require(:share).permit(:content, :remarks, :prefecture_id, :human_id,  :elevation_id, :distance_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -39,6 +43,6 @@ class SharesController < ApplicationController
   end
 
   def new_image_params
-    params[:new_images].permit({images: []})
+    params.require(:share_images).permit({images: []})
   end
 end

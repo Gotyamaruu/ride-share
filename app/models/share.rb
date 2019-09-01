@@ -1,5 +1,7 @@
 class Share < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :share_images, dependent: :destroy
+  accepts_nested_attributes_for :share_images
 
 belongs_to_active_hash :prefecture
 belongs_to_active_hash :human

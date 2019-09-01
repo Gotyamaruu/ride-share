@@ -3,17 +3,18 @@
     らいど いきましょ
   .new-form
     .new-form__content
-      = form_with url: shares_path, id:"new-item", method: "post" do |f|
+      = form_with model: @share do |f|
         .upload-box
-          .upload-box__dropbox
-            .upload-box__dropbox__container
+          = f.fields_for :share_images, @share.share_images.first do |image|
+            .upload-box__dropbox
               #preview
-              = f.label :image, for: "upload-image" do
-                .upload-box__dropbox__container__list
-                  = f.file_field :image,multiple: "multiple", id:"upload-image", 'data-image': 0
-                .upload-box__dropbox__container__frame
-                  %p.upload-box__dropbox__container__frame__explain
-                    最大3枚までアップロードできます
+              .upload-box__dropbox__container
+                = image.label :image, for: "upload-image" do
+                  .upload-box__dropbox__container__list
+                    = image.file_field :image_url,multiple: "multiple", id:"upload-image", 'data-image': 0
+                  .upload-box__dropbox__container__frame
+                    %p.upload-box__dropbox__container__frame__explain
+                      最大3枚までアップロードできます
         = f.text_field :content, class: 'form__message', placeholder: 'らいどさき', maxlength: "20"
         -# = f.label :image, class: 'form__image' do
         -#   = fa_icon 'picture-o', class: 'icon3'

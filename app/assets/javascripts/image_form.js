@@ -1,5 +1,4 @@
 //= require turbolinks
-
 $(function() {
   var dropzone = $(".upload-box__dropbox__container__frame__explain");
   var preview = $("#preview");
@@ -63,7 +62,7 @@ $(function() {
     }
   })
 
-  $("#new_item").on("submit", function(e){
+  $(".new_images").on("submit", function(e){
     e.preventDefault();
     var formData = new FormData($(this).get(0));
     if (new_image_files.length == 0) {
@@ -74,12 +73,12 @@ $(function() {
       });
     }
     $.ajax({
-      url:         "/items",
+      url:         "/shares",
       type:        "POST",
       data:        formData,
       contentType: false,
       processData: false,
     })
-    return false;
+    // return false;
   });
 });
