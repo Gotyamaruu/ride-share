@@ -1,0 +1,2 @@
+class ShareImage < ApplicationRecord
+end
