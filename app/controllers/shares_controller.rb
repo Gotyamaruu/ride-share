@@ -12,7 +12,13 @@ class SharesController < ApplicationController
   end
 
   def create
-    Share.create(share_params)
+    @share = Share.new(share_params)
+    if @share.save && new_image_params[:images][0] != ""
+      new_image_params[:images].each do |image|
+        @share.share_images.create(image: image, share_id: share.id)
+      end
+      redirect_to root_path
+    end
   end
 
   def show
@@ -30,5 +36,9 @@ class SharesController < ApplicationController
 
   def set_share
     @share = Share.find(params[:id])
+  end
+
+  def new_image_params
+    params[:new_images].permit({images: []})
   end
 end
