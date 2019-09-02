@@ -1,10 +1,10 @@
-.content_post{:style => "background-image: image-url(#{share.image});"}
-  .share
+.share{:style => "background-image: url(#{share.image});"}
+  .list
     %span= image_tag 'arrow_top.png'
-    %ul.more_list
+    %ul.list__lists
       %li
         = link_to '詳細', "/shares/#{@share}", method: :get
-      - if user_signed_in? && current_user.id == @share
+      - if user_signed_in? && current_user.id == share.user_id
         %li
           = link_to '編集', "/shares/#{share.id}/edit", method: :get
         %li
