@@ -1,15 +1,9 @@
-.share{:style => "background-image: url(#{share.image});"}
-  .list
-    %span= image_tag 'arrow_top.png'
-    %ul.list__lists
-      %li
-        = link_to '詳細', "/shares/#{@share}", method: :get
-      - if user_signed_in? && current_user.id == share.user_id
-        %li
-          = link_to '編集', "/shares/#{share.id}/edit", method: :get
-        %li
-          = link_to '削除', "/shares/#{share.id}", method: :delete
-  = simple_format(share.content)
-  %span.name
-    %span 投稿者
-    %span nori
+= link_to share_path(share.id), class: 'share-link' do
+  .share{:style => "background-image: url(#{share.image});"}
+    %p.share__content
+      = share.content
+    .share__name
+      .share__name__text
+        %span 投稿者
+      .share__name__text
+        %span nori
