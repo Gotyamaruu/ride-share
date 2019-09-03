@@ -1,32 +1,20 @@
-  @font-face {
-    font-family: 'myfont';
-    src: url('ipaexm.ttf') format('truetype');
-    font-family: 'ほのか明朝';
-    src: url('font_1_honokamin.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  body,html {
-    font-family: 'myfont';
-    height: 100%;
-    background-color: $lightGray;
-  }
-
   .main__contents{
-    width: 700px;
-    margin:auto ;
+    width: 100%;
+  }
+  .share-link{
+    text-decoration: none;
   }
   .share {
-    @include boxBase(20px 0  ,30px);
+    @include boxBase(50px 0px 30px 173px);
     position: relative;
     height: 300px;
-    width: 600px;
+    width: 550px;
     color: #fff;
     background-size: cover;
     background-position: center center;
     border-radius: 3px;
     box-shadow: 0 20px 10px 0px rgba($black,0.2);
+    display: inline-block;
     &:after {
       content: '';
       position: absolute;
@@ -37,61 +25,28 @@
       z-index: 1;
       border-radius: 3px;
     }
-    .list {
+    &__content {
       position: absolute;
-      cursor: pointer;
-      top: 20px;
-      right: 10px;
+      left: 30px;
+      right: 100px;
+      bottom: 30px;
+      margin: 0 200px 0 -30px;
+      font-size: 25px;
       z-index: 2;
-      height: 100px;
-      width: 80px;
-      &:hover ul.list__lists {
-        display: block;
-      }
-      ul.list__lists {
-        position: absolute;
-        text-align: left;
-        width: 80px;
-        right: 0;
-        font-size: 12px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        display: none;
-        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        border-radius: 3px;
-        li {
-          border-bottom: 1px solid #ddd;
-          &:last-child {
-            border-bottom: 0;
-        }
-      }
+      letter-spacing: 3px;
+      padding: 0 0 0 10px;
+      text-shadow: 0 70px 2px grey;
     }
-  }
-  p {
-    position: absolute;
-    left: 30px;
-    right: 100px;
-    bottom: 30px;
-    margin: 0;
-    font-size: 20px;
-    z-index: 2;
-    font-weight: bold;
-    font-family: 'Unica One','ほのか明朝', sans-serif;
-}
-  span.name {
+    &__name {
     position: absolute;
     right: 30px;
     bottom: 30px;
-    font-size: 15px;
-    font-family: 'Unica One',sans-serif;
-    color: rgb(194, 191, 191);
-    span {
-      display: block;
+    font-size: 25px;
+    color:white;
+    letter-spacing: 4px;
+      &__text {
+        display: block;
+        text-shadow: 0 0 6px grey;
+      }
     }
   }
-  .share__massage {
-    .share__message-date {
-      text-align: right;
-    }
- }
-}
